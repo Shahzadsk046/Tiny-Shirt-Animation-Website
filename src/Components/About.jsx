@@ -1,6 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import c1 from "../images/c1.gif";
+// import { NavLink } from "react-router-dom";
+import c2 from "../images/c2.gif";
 import Common from "./Common";
 
 const About = () => {
@@ -8,7 +8,7 @@ const About = () => {
     <>
       <Common
         name="Welcome to About Page"
-        imgsrc={c1}
+        imgsrc={c2}
         visit="/contact"
         btname="Contact Now"
       />
