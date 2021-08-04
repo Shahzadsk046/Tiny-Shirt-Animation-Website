@@ -1,8 +1,4 @@
 import useWebAnimations, {
-  fadeIn,
-  fadeInDown,
-  fadeInRight,
-  fadeInTopLeft,
   fadeInUp,
 } from "@wellyshen/use-web-animations";
 import React from "react";
