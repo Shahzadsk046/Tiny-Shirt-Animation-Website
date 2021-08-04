@@ -1,12 +1,23 @@
+import useWebAnimations, { fadeInUp } from "@wellyshen/use-web-animations";
 import React from "react";
 import { NavLink } from "react-router-dom";
 // import web from "../images/c2.gif";
 
 const Card = (props) => {
+
+  const cardref = useWebAnimations({
+    ...fadeInUp,
+    animationOptions: {
+      delay:800,
+      duration: 1000,
+      fill: "both"
+    }
+  })
+
   return (
     <>
       <div className="col-md-4 col-10 mx-auto">
-        <div className="card">
+        <div className="card" ref={cardref.ref}>
           <img
             src={props.imgsrc}
             className="card-img-top"

@@ -1,55 +1,33 @@
-import useWebAnimations, { fadeInLeft} from "@wellyshen/use-web-animations";
-import React, {useRef} from "react";
+import useWebAnimations, { fadeInRight, fadeInUp} from "@wellyshen/use-web-animations";
+// import React, {useRef} from "react";
 import { NavLink } from "react-router-dom";
 
 // import c1 from '../images/c1.gif';
 
 const Common = (props) => {
 
-
-  // const {keyframes, animationOptions} = fadeInLeft;
-  // const {ref} = useWebAnimations({
-    // ...h1ref,
-    // ...h2ref,
-    // ...btnref,
-    // keyframes:[
-    //   ...keyframes,
-    // ],
-    // animationOptions:{
-    //   ...animationOptions,
-      // duration: animationOptions.duration * 6,
-      // easing: 'ease-in-out',
-    // },
-    // keyframes:[
-    //   // {transform: "translateX(500px)"},
-    //   {transform: "translate(0,0)"},
-    //   {transform: "translate(500px,0)"},
-    //   // {transform: "translateX(500px)"},
-    // ],
-    // animationOptions:{
-    //   duration:1000,
-    //   // iterations: Infinity,
-    //   // direction: "up-down",
-    //   // easing: "ease-in-out",
-    // }
-    // ...bounce
-  //   ...fadeInLeft,
-  // })
-  const h1ref = useWebAnimations({...fadeInLeft})
+  const h1ref = useWebAnimations({...fadeInUp})
   const h2ref =  useWebAnimations({
-    ...fadeInLeft,
+    ...fadeInUp,
   animationOptions: {
     delay:500,
     duration: 1000,
-    fill: "forwards",
-    
-    
+    fill: "both",
   }    
   })
-  const btnref =  useWebAnimations({...fadeInLeft,
+  const btnref =  useWebAnimations({...fadeInUp,
     animationOptions: {
-      delay:1000,
-      duration: 1000,}})
+      delay:800,
+      duration: 1000,
+      fill: "both",
+    }})
+  const imgref =  useWebAnimations({...fadeInRight,
+    animationOptions: {
+      delay:500,
+      duration: 1000,
+      fill: "both",
+      overflow: 'hidden'
+    }})
 
   return (
       <section id="header" className="d-flex align-items-center">
@@ -72,7 +50,7 @@ const Common = (props) => {
                   </div>
                 </div>
 
-                <div className="col-lg-6 order-1 order-lg-2 header-img">
+                <div className="col-lg-6 order-1 order-lg-2 header-img" ref={imgref.ref}>
                   <img src={props.imgsrc} className="img-fluid animated" alt="Home" />
                 </div>
               </div>
