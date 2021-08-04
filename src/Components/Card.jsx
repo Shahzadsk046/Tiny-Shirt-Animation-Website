@@ -28,8 +28,8 @@ const Card = (props) => {
           <div className="card-body">
             <h5 className="card-title fw-bold ">{props.title}</h5>
             <p className="card-text">{props.desc}</p>
-            <NavLink to="/" className="btn btn-primary">
-              Go somewhere
+            <NavLink to="/contact" className="btn btn-outline-success">
+              Contact Now
             </NavLink>
           </div>
         </div>
